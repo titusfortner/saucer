@@ -6,7 +6,7 @@ RSpec.describe Saucer do
       @driver = Saucer::Driver.new
       expect(@driver).to be_a Selenium::WebDriver::Driver
     ensure
-      @driver.quit
+      @driver.quit if @driver
     end
   end
 
@@ -23,12 +23,12 @@ RSpec.describe Saucer do
   end
 
   it 'uses capabilities to initialize browser' do
-    config_selenium = Saucer::Config::Selenium.new(version: '53', browser_name: :firefox, command_timeout: 4)
+    config_selenium = Saucer::Config::Selenium.new(version: '53', browser_name: :firefox)
     begin
       @driver = Saucer::Driver.new(config_selenium)
       expect(@driver.capabilities['browserVersion']).to eq '53.0'
     ensure
-      @driver.quit
+      @driver.quit if @driver
     end
   end
 

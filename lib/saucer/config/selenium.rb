@@ -22,7 +22,8 @@ module Saucer
         caps = @config_params.each_with_object({}) do |param, hash|
                  hash[param] = @opts[param] if @opts.key?(param)
         end
-        ::Selenium::WebDriver::Remote::Capabilities.send(@opts[:browser_name], caps)
+        browser_name = @opts[:browser_name] || :chrome
+        ::Selenium::WebDriver::Remote::Capabilities.send(browser_name, caps)
       end
     end
   end
