@@ -1,5 +1,6 @@
-require "bundler/setup"
 require "saucer"
+
+include Saucer
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

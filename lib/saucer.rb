@@ -1,5 +1,4 @@
+require "require_all"
 require "saucer/version"
+require_rel "saucer"
 
-module Saucer
-  # Your code goes here...
-end
