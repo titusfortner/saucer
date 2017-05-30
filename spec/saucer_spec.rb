@@ -1,13 +1,11 @@
 require "spec_helper"
 
 RSpec.describe Saucer do
+
+  after { @driver.quit if @driver }
   it 'initializes browser' do
-    begin
-      @driver = Saucer::Driver.new
-      expect(@driver).to be_a Selenium::WebDriver::Driver
-    ensure
-      @driver.quit if @driver
-    end
+    @driver = Saucer::Driver.new
+    expect(@driver).to be_a Selenium::WebDriver::Driver
   end
 
   it 'uses config parameters' do
@@ -24,12 +22,18 @@ RSpec.describe Saucer do
 
   it 'uses capabilities to initialize browser' do
     config_selenium = Saucer::Config::Selenium.new(version: '53', browser_name: :firefox)
-    begin
-      @driver = Saucer::Driver.new(config_selenium)
-      expect(@driver.capabilities['browserVersion']).to eq '53.0'
-    ensure
-      @driver.quit if @driver
-    end
+    @driver = Saucer::Driver.new(config_selenium)
+    expect(@driver.capabilities['browserVersion']).to eq '53.0'
+  end
+
+  it 'uses annotations' do
+    @driver = Saucer::Driver.new
+    @driver.get('http://google.com')
+    @driver.comment('Hi Mom!')
+    @driver.job_result(true)
+    @driver.job_name("Testing Annotations")
+    @driver.job_tags(['1', '2', '3'])
+    @driver.build_name("Annotation Build")
   end
 
 end
