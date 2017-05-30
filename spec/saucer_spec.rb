@@ -1,11 +1,13 @@
 require "spec_helper"
 
 RSpec.describe Saucer do
-  it "has a version number" do
-    expect(Saucer::VERSION).not_to be nil
+  it 'initializes browser' do
+    begin
+      @driver = Saucer::Driver.new
+      expect(@driver).to be_a Selenium::WebDriver::Driver
+    ensure
+      @driver.quit
+    end
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
-  end
 end
