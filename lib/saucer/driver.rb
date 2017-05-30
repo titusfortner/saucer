@@ -1,10 +1,9 @@
-require 'selenium-webdriver'
-
 module Saucer
   class Driver < Selenium::WebDriver::Driver
 
-    def initialize
-      super Selenium::WebDriver::Remote::Bridge.new(Config.new.opts)
+    def initialize(config = nil)
+      config ||= Config.new
+      super Selenium::WebDriver::Remote::Bridge.new(config.opts)
     end
 
   end
