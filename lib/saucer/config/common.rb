@@ -8,7 +8,7 @@ module Saucer
                     avoid_proxy public record_video video_upload_on_pass record_screenshots
                     record_logs capture_html priority webdriver_remote_quiet_exceptions).freeze
 
-      attr_reader :config_params
+      attr_reader :config_params, :username, :access_key
 
       def initialize(opts = {})
         @username = opts.delete(:username) || ENV['SAUCE_USERNAME']

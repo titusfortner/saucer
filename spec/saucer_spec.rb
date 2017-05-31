@@ -36,4 +36,11 @@ RSpec.describe Saucer do
     @driver.build_name("Annotation Build")
   end
 
+  it 'uses Sauce Whisk' do
+    @driver = Saucer::Driver.new
+    expect(@driver.account.username).to eq ENV['SAUCE_USERNAME']
+    expect(@driver.job.id).to eq(@driver.session_id)
+    expect(@driver.concurrency[:total_concurrency]).to eq 100
+  end
+
 end
