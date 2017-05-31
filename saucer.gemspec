@@ -38,4 +38,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'require_all'
   spec.add_dependency 'selenium-webdriver'
   spec.add_dependency 'sauce_whisk'
+  spec.add_dependency 'sauce_platforms'
+  spec.add_dependency 'json'
 end
