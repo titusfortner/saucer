@@ -36,11 +36,7 @@ module Saucer
     end
 
     def platforms
-      SauceWhisk::Sauce.platforms.map { |platform| Platform.new(platform) }
-    end
-
-    def platform?(platform)
-      platforms.include?(platform)
+      SauceWhisk::Sauce.platforms
     end
 
     def storage
