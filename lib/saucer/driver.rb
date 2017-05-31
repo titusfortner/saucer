@@ -2,7 +2,6 @@ module Saucer
   class Driver < Selenium::WebDriver::Driver
 
     include Annotations
-    include API
 
     attr_reader :driver
 
@@ -11,6 +10,10 @@ module Saucer
       @driver = super Selenium::WebDriver::Remote::Bridge.new(@config.opts)
     end
 
+    def quit(result = nil)
+      @driver.job_result(result) if result
+      super
+    end
   end
 
 end
