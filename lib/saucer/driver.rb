@@ -3,11 +3,15 @@ module Saucer
 
     include Annotations
 
-    attr_reader :driver
+    attr_reader :driver, :config
 
     def initialize(config = nil)
       @config = config || Config::Selenium.new
       @driver = super Selenium::WebDriver::Remote::Bridge.new(@config.opts)
+    end
+
+    def sauce
+      @api ||= API.new(self, @config)
     end
 
     def quit(result = nil)
