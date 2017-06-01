@@ -11,8 +11,8 @@ module Saucer
     end
 
     def quit(result = nil)
-      @driver.job_result(result) if result
-      super
+      @driver.job_result(result) unless result.nil?
+      super(*[])
     end
   end
 
