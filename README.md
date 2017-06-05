@@ -12,6 +12,31 @@ gem 'saucer'
 
 ## Usage
 
+#### Configuration
+
+Can optionally pass in a `Config::Selenium` instance with any of the 
+[supported Test Configuration Options](https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options)
+Note that Ruby syntax is a `Symbol` with snake_case and not `String` with camelCase
+```ruby
+config_selenium = Config::Selenium.new(version: '53', browser_name: :firefox)
+@driver = Driver.new(config_selenium)
+```
+
+#### Cucumber
+RSpec doesn't need to be concerned with this, but Cucumber needs an extra step in `env.rb`:
+```ruby
+Before do |scenario|
+  Saucer::Config::Sauce.scenario = scenario
+  @driver = Saucer::Driver.new
+end
+
+After do |scenario|
+  Saucer::Config::Sauce.scenario = scenario
+  @driver.quit
+end
+```
+
+#### Parallel
 The most basic usage for parallel execution is to define the following Rake task, which 
 will every spec in the spec directory in 4 processes on the default Sauce platform (Linux with Chrome v48)
 
@@ -20,7 +45,7 @@ Saucer::Parallel.new.run
 ```
 
 To Specify basic number of processes, a specific subdirectory (Cucumber or RSpec), and
-output file:
+reporting output file:
 
 ```ruby
 Saucer::Parallel.new(number: 7,
@@ -56,7 +81,7 @@ or you can use the default rake task and define your configurations in
     :browser: :chrome
     :browser_version: 42
 ```
- 
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/saucer.
