@@ -10,7 +10,6 @@ module Saucer
       @browser_version = opt[:browser_version] || opt['short_version']
     end
 
-    # TODO update for defaults
     def to_hash
       Platform.send(@os).send(@browser).send("v#{@browser_version}")
     end

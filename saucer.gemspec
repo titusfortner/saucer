@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'parallel_split_test'
   spec.add_dependency 'require_all'
-  spec.add_dependency 'selenium-webdriver'
+  spec.add_dependency 'selenium-webdriver', "~> 3.0", "< 3.4.1"
   spec.add_dependency 'sauce_whisk'
   spec.add_dependency 'sauce_platforms'
   spec.add_dependency 'json'

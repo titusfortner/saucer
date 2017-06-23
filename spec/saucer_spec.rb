@@ -6,7 +6,7 @@ RSpec.describe Saucer do
     after { @driver.quit if @driver }
 
     it 'initializes browser' do
-      @driver = Driver.new
+      @driver = Saucer::Driver.new
       expect(@driver).to be_a Selenium::WebDriver::Driver
     end
 
@@ -23,19 +23,19 @@ RSpec.describe Saucer do
     end
 
     it 'uses capabilities to initialize browser' do
-      config_selenium = Config::Selenium.new(version: '53', browser_name: :firefox)
-      @driver = Driver.new(config_selenium)
+      @driver = Driver.new(desired_capabilities: {version: '53', browser_name: :firefox})
       expect(@driver.capabilities['browserVersion']).to eq '53.0'
     end
 
-    it 'uses annotations' do
+    it 'checking name & build' do
       @driver = Driver.new
       @driver.get('http://google.com')
-      @driver.comment('Hi Mom!')
-      @driver.job_result(true)
-      @driver.job_name("Testing Annotations")
-      @driver.job_tags(['1', '2', '3'])
-      @driver.build_name("Annotation Build")
+      j = @driver.sauce.job
+      @driver.comment = 'Hi Mom!'
+      @driver.job_result = true
+      @driver.job_name = "Testing Annotations"
+      @driver.job_tags = ['1', '2', '3']
+      @driver.build_name = "Annotation Build"
     end
 
     it 'uses Sauce Whisk' do

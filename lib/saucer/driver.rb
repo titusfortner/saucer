@@ -5,19 +5,28 @@ module Saucer
 
     attr_reader :driver, :config
 
-    def initialize(config = nil)
-      @config = config || Config::Selenium.new
-      @driver = super Selenium::WebDriver::Remote::Bridge.new(@config.opts)
+    def initialize(opt = {})
+      caps = opt[:desired_capabilities] || {}
+      @config ||= Config::Selenium.new(caps)
+      listener = opt.delete :listener
+      opt[:url] = @config.url
+      opt[:desired_capabilities] = @config.capabilities
+
+      bridge = Selenium::WebDriver::Remote::Bridge.new(opt)
+      bridge = Support::EventFiringBridge.new(bridge, listener) if listener
+
+      @driver = super bridge
+
+      @driver.job_name = @config.sauce[:name]
+      @driver.build_name = @config.sauce[:build]
     end
 
     def sauce
       @api ||= API.new(self, @config)
     end
 
-    def quit(data = nil)
-      if data.is_a?(TrueClass) || data.is_a?(FalseClass)
-        result = data
-      elsif RSpec.current_example
+    def quit
+      if RSpec.current_example
         exception = RSpec.current_example.exception
         result = exception.nil?
       elsif Saucer::Config::Sauce.scenario
@@ -26,11 +35,13 @@ module Saucer
       end
 
       if exception
-        @driver.comment "Error: #{exception.inspect}"
-        @driver.comment "Error Location: #{exception.backtrace.first}"
+        @driver.comment = "Error: #{exception.inspect}"
+        @driver.comment = "Error Location: #{exception.backtrace.first}"
       end
 
-      @driver.job_result(result) unless result.nil?
+      @driver.job_result = result unless result.nil?
+      results = @driver.sauce.job.log_url[/(.*)\/.*$/, 1]
+      Selenium::WebDriver.logger.warn("Sauce Labs results: #{results}")
 
       super(*[])
     end
