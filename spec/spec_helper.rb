@@ -1,4 +1,5 @@
 require "saucer"
+require 'selenium-webdriver'
 
 include Saucer
 

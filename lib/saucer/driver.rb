@@ -1,28 +1,23 @@
 module Saucer
-  class Driver < Selenium::WebDriver::Driver
-
-    include Annotations
+  class Driver
 
     attr_reader :driver, :config
 
     def initialize(opt = {})
       caps = opt[:desired_capabilities] || {}
-      @config ||= Config::Selenium.new(caps)
-      listener = opt.delete :listener
+      @config = Config::Selenium.new(caps)
+
       opt[:url] = @config.url
       opt[:desired_capabilities] = @config.capabilities
 
-      bridge = Selenium::WebDriver::Remote::Bridge.new(opt)
-      bridge = Support::EventFiringBridge.new(bridge, listener) if listener
+      @driver = Selenium::WebDriver.for(:remote, opt)
 
-      @driver = super bridge
-
-      @driver.job_name = @config.sauce[:name]
-      @driver.build_name = @config.sauce[:build]
+      sauce.job_name = @config.sauce[:name]
+      sauce.build_name = @config.sauce[:build]
     end
 
     def sauce
-      @api ||= API.new(self, @config)
+      @sauce ||= Sauce.new(driver, @config)
     end
 
     def quit
@@ -35,15 +30,25 @@ module Saucer
       end
 
       if exception
-        @driver.comment = "Error: #{exception.inspect}"
-        @driver.comment = "Error Location: #{exception.backtrace.first}"
+        sauce.comment = "Error: #{exception.inspect}"
+        sauce.comment = "Error Location: #{exception.backtrace.first}"
       end
 
-      @driver.job_result = result unless result.nil?
-      results = @driver.sauce.job.log_url[/(.*)\/.*$/, 1]
+      sauce.job_result = result unless result.nil?
+      results = sauce.api.job.log_url[/(.*)\/.*$/, 1]
       Selenium::WebDriver.logger.warn("Sauce Labs results: #{results}")
 
-      super(*[])
+      driver.quit
+    end
+
+    def method_missing(method_name, *arguments, &block)
+      if driver.respond_to? method_name
+        driver.send(method_name, *arguments, &block)
+      end
+    end
+
+    def respond_to?(method_name, include_private = false)
+      driver.respond_to?(method_name)
     end
 
   end

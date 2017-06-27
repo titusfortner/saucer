@@ -7,7 +7,7 @@ RSpec.describe Saucer do
 
     it 'initializes browser' do
       @driver = Saucer::Driver.new
-      expect(@driver).to be_a Selenium::WebDriver::Driver
+      expect(@driver.driver).to be_a Selenium::WebDriver::Driver
     end
 
     it 'uses config parameters' do
@@ -30,7 +30,7 @@ RSpec.describe Saucer do
     it 'checking name & build' do
       @driver = Driver.new
       @driver.get('http://google.com')
-      j = @driver.sauce.job
+      @driver.sauce.api.job
       @driver.comment = 'Hi Mom!'
       @driver.job_result = true
       @driver.job_name = "Testing Annotations"
@@ -40,9 +40,10 @@ RSpec.describe Saucer do
 
     it 'uses Sauce Whisk' do
       @driver = Driver.new
-      expect(@driver.sauce.account.username).to eq ENV['SAUCE_USERNAME']
-      expect(@driver.sauce.job.id).to eq(@driver.session_id)
-      expect(@driver.sauce.concurrency[:total_concurrency]).to eq 100
+      api = @driver.sauce.api
+      expect(api.account.username).to eq ENV['SAUCE_USERNAME']
+      expect(api.job.id).to eq(@driver.session_id)
+      expect(api.concurrency[:total_concurrency]).to eq 100
     end
   end
 
@@ -50,7 +51,7 @@ RSpec.describe Saucer do
     it 'auto adds name' do
       @driver = Driver.new
       @driver.quit
-      j = @driver.sauce.job
+      j = @driver.sauce.api.job
       expect(j.name).to eq "Saucer after exit auto adds name"
     end
 
@@ -71,7 +72,7 @@ RSpec.describe Saucer do
 
     after do
       @driver.quit
-      j = @driver.sauce.job
+      j = @driver.sauce.api.job
       raise ArgumentError unless j.passed == false
     end
 
