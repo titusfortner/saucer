@@ -1,5 +1,5 @@
 module Saucer
-  class Driver
+  class Driver < Selenium::WebDriver::Driver
 
     attr_reader :driver, :config
 
@@ -10,14 +10,14 @@ module Saucer
       opt[:url] = @config.url
       opt[:desired_capabilities] = @config.capabilities
 
-      @driver = Selenium::WebDriver.for(:remote, opt)
+      super
 
       sauce.job_name = @config.sauce[:name]
       sauce.build_name = @config.sauce[:build]
     end
 
     def sauce
-      @sauce ||= Sauce.new(driver, @config)
+      @sauce ||= Sauce.new(self, @config)
     end
 
     def quit
@@ -38,18 +38,7 @@ module Saucer
       results = sauce.api.job.log_url[/(.*)\/.*$/, 1]
       Selenium::WebDriver.logger.warn("Sauce Labs results: #{results}")
 
-      driver.quit
+      super
     end
-
-    def method_missing(method_name, *arguments, &block)
-      if driver.respond_to? method_name
-        driver.send(method_name, *arguments, &block)
-      end
-    end
-
-    def respond_to?(method_name, include_private = false)
-      driver.respond_to?(method_name)
-    end
-
   end
 end
