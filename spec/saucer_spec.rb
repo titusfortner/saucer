@@ -22,8 +22,14 @@ RSpec.describe Saucer do
       expect(caps[:command_timeout]).to eq 4
     end
 
-    it 'uses capabilities to initialize browser' do
+    it 'uses hash to initialize browser' do
       @driver = Driver.new(desired_capabilities: {version: '53', browser_name: :firefox})
+      expect(@driver.capabilities['browserVersion']).to eq '53.0'
+    end
+
+    it 'uses capabilities to initialize browser' do
+      caps = Selenium::WebDriver::Remote::Capabilities.firefox(version: '53')
+      @driver = Driver.new(desired_capabilities: caps)
       expect(@driver.capabilities['browserVersion']).to eq '53.0'
     end
 

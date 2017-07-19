@@ -8,11 +8,12 @@ module Saucer
                     avoid_proxy public record_video video_upload_on_pass record_screenshots
                     record_logs capture_html priority webdriver_remote_quiet_exceptions).freeze
 
-      attr_reader :config_params, :username, :access_key
+      attr_reader :config_params, :username, :access_key, :url
 
       def initialize(opts = {})
         @username = opts.delete(:username) || ENV['SAUCE_USERNAME']
         @access_key = opts.delete(:access_key) || ENV['SAUCE_ACCESS_KEY']
+        @url = opts.delete(:url) || "https://#{@username}:#{@access_key}@ondemand.saucelabs.com:443/wd/hub"
 
         @opts = opts
         @config_params = CONFIG_PARAMS

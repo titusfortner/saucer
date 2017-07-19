@@ -17,15 +17,19 @@ module Saucer
       end
 
       def capabilities
-        caps = @config_params.each_with_object({}) do |param, hash|
-          hash[param] = @opts[param] if @opts.key?(param)
-          hash[param] ||= ENV[param.to_s] if ENV[param.to_s]
+        caps = @opts[:desired_capabilities]
+        caps ||= begin
+          caps = @config_params.each_with_object({}) do |param, hash|
+            hash[param] = @opts[param] if @opts.key?(param)
+            hash[param] ||= ENV[param.to_s] if ENV[param.to_s]
+          end
+          browser_name = @opts[:browser_name] || :chrome
+          ::Selenium::WebDriver::Remote::Capabilities.send(browser_name, caps)
         end
-        @sauce = Sauce.new.to_hash
 
+        @sauce = Sauce.new.to_hash
         caps[:"sauce:data"] = @sauce.to_hash
-        browser_name = @opts[:browser_name] || :chrome
-        ::Selenium::WebDriver::Remote::Capabilities.send(browser_name, caps)
+        caps
       end
     end
 
