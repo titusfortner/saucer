@@ -3,10 +3,13 @@ module Saucer
 
     attr_reader :driver, :config
 
-    def initialize(opt = {})
+    def initialize(*args)
+      browser = args.pop if args.first.is_a? Symbol
+      browser = nil if browser == :remote
+      opt = args.first || {}
       unless opt[:desired_capabilities].is_a? Selenium::WebDriver::Remote::Capabilities
         opts = opt[:desired_capabilities] || {}
-        browser = opt.key?(:browser_name) ? opt[:browser_name].downcase.to_sym : :chrome
+        browser = opt.key?(:browser_name) ? opt[:browser_name].downcase.to_sym : browser || :chrome
         opt[:desired_capabilities] = Selenium::WebDriver::Remote::Capabilities.send(browser, opts)
       end
       @config = Config::Selenium.new(opt)
@@ -14,7 +17,7 @@ module Saucer
       opt[:url] = @config.url
       opt[:desired_capabilities] = @config.capabilities
 
-      super
+      super(opt)
 
       sauce.job_name = @config.sauce[:name]
       sauce.build_name = @config.sauce[:build]
