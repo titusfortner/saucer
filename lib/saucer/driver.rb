@@ -1,5 +1,5 @@
 module Saucer
-  class Driver < Selenium::WebDriver::Driver
+  class Driver < Selenium::WebDriver::Remote::Driver
 
     attr_reader :driver, :config
 

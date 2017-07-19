@@ -35,7 +35,7 @@ module Saucer
         @page_object = page_objects.first if page_objects.size == 1
 
         @name = opt[:name] if opt.key? :name
-        @build = opt[:build] || ['BUILD_TAG'] || "Build - #{Time.now.to_i}"
+        @build = opt[:build] || ENV['BUILD_TAG'] || "Build - #{Time.now.to_i}"
 
         if RSpec.respond_to?(:current_example) && !RSpec.current_example.nil?
           @name ||= RSpec.current_example.full_description

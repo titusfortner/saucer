@@ -7,7 +7,7 @@ RSpec.describe Saucer do
 
     it 'initializes browser' do
       @driver = Saucer::Driver.new
-      expect(@driver.driver).to be_a Selenium::WebDriver::Driver
+      expect(@driver).to be_a Selenium::WebDriver::Driver
     end
 
     it 'uses config parameters' do
@@ -31,11 +31,11 @@ RSpec.describe Saucer do
       @driver = Driver.new
       @driver.get('http://google.com')
       @driver.sauce.api.job
-      @driver.comment = 'Hi Mom!'
-      @driver.job_result = true
-      @driver.job_name = "Testing Annotations"
-      @driver.job_tags = ['1', '2', '3']
-      @driver.build_name = "Annotation Build"
+      @driver.sauce.comment = 'Hi Mom!'
+      @driver.sauce.job_result = true
+      @driver.sauce.job_name = "Testing Annotations"
+      @driver.sauce.job_tags = ['1', '2', '3']
+      @driver.sauce.build_name = "Annotation Build"
     end
 
     it 'uses Sauce Whisk' do
