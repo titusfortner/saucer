@@ -1,5 +1,3 @@
-require 'sauce_whisk'
-
 module Saucer
   class API
 
