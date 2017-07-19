@@ -1,3 +1,5 @@
+require 'bundler'
+
 module Saucer
   module Config
     class Sauce
