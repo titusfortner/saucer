@@ -29,6 +29,8 @@ module Saucer
 
         @sauce = Sauce.new.to_hash
         caps[:"sauce:data"] = @sauce.to_hash
+        caps[:name] = @sauce[:name]
+        caps[:build] = @sauce[:build]
         caps
       end
     end

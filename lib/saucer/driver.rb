@@ -18,9 +18,6 @@ module Saucer
       opt[:desired_capabilities] = @config.capabilities
 
       super(opt)
-
-      sauce.job_name = @config.sauce[:name]
-      sauce.build_name = @config.sauce[:build]
     end
 
     def sauce
