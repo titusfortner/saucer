@@ -4,7 +4,7 @@ module Saucer
     attr_reader :driver, :config
 
     def initialize(*args)
-      browser = args.pop if args.first.is_a? Symbol
+      browser = args.shift if args.first.is_a? Symbol
       browser = nil if browser == :remote
       opt = args.first || {}
       unless opt[:desired_capabilities].is_a? Selenium::WebDriver::Remote::Capabilities
