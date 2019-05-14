@@ -12,6 +12,7 @@ tags time_zone tunnel_identifier username video_upload_on_pass]
     VALID = W3C + SAUCE
 
     attr_accessor :url
+    attr_reader :data_center
 
     def initialize(**opts)
       VALID.each do |option|
@@ -49,10 +50,6 @@ tags time_zone tunnel_identifier username video_upload_on_pass]
     end
     alias :to_h :capabilities
 
-    def driver
-      Selenium::WebDriver.for :remote, url: @url, desired_capabilities: capabilities
-    end
-
     def data_center=(dc)
       @url = case dc
              when :US_WEST
@@ -64,6 +61,7 @@ tags time_zone tunnel_identifier username video_upload_on_pass]
              else
                raise ::ArgumentError.new "#{dc} is an invalid data center; specify :US_WEST, :US_EAST or :EU_VDC"
              end
+      @data_center = dc
     end
 
     private

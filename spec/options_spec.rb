@@ -80,6 +80,22 @@ module Saucer
       end
     end
 
+    describe '#data_center' do
+      it 'defaults to US West' do
+        expect(options.data_center).to eq(:US_WEST)
+      end
+
+      it 'sets specified value' do
+        options.data_center = :EU_VDC
+        expect(options.data_center).to eq(:EU_VDC)
+      end
+
+      it 'raises Exception if value is incorrect' do
+        expect { options.data_center = :INVALID }.to raise_error(ArgumentError, /INVALID is an invalid data center/)
+      end
+
+    end
+
     describe '#capabilities' do
       it 'sets default values' do
         expected = {browser_name: 'firefox',
@@ -90,14 +106,6 @@ module Saucer
                                         selenium_version: '3.141.59'}}
 
         expect(options.capabilities).to eq expected
-      end
-    end
-
-    describe '#driver' do
-      it 'creates a valid Sauce Labs session' do
-        driver = options.driver
-        expect(driver).to be_a(Selenium::WebDriver::Driver)
-        driver.quit
       end
     end
   end
