@@ -1,6 +1,8 @@
-require "require_all"
 require 'selenium-webdriver'
-require "saucer/version"
-require "sauce_whisk"
-require_rel "saucer"
+require 'saucer/options'
+require 'saucer/version'
 
+module Saucer
+  class AuthenticationError < StandardError
+  end
+end
