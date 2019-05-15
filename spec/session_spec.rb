@@ -1,4 +1,6 @@
-require "spec_helper"
+# frozen_string_literal: true
+
+require 'spec_helper'
 
 module Saucer
   describe Session do
@@ -22,7 +24,7 @@ module Saucer
     describe 'custom commands' do
       it 'comments' do
         allow(driver).to receive(:execute_script)
-        session.comment = "Foo"
+        session.comment = 'Foo'
 
         expect(driver).to have_received(:execute_script).with('sauce: context=Foo')
       end
@@ -45,10 +47,6 @@ module Saucer
       end
     end
 
-    describe 'api commands' do
-
-    end
-
     describe '#self.start' do
       it 'creates a session' do
         allow(Selenium::WebDriver).to receive(:for).and_return(driver)
@@ -56,7 +54,7 @@ module Saucer
 
         expect(session).to be_a(Session)
 
-        args =[:remote, {url: options.url, desired_capabilities: options.capabilities}]
+        args = [:remote, {url: options.url, desired_capabilities: options.capabilities}]
         expect(Selenium::WebDriver).to have_received(:for).with(*args)
       end
     end

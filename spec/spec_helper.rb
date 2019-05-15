@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require 'saucer'
-
-include Saucer
 
 RSpec.configure do |config|
   config.filter_run_including focus: true unless ENV['CI']

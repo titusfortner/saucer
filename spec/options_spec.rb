@@ -1,4 +1,6 @@
-require "spec_helper"
+# frozen_string_literal: true
+
+require 'spec_helper'
 
 module Saucer
   describe Options do
@@ -39,7 +41,8 @@ module Saucer
           access_key = ENV['SAUCE_ACCESS_KEY']
           ENV.delete('SAUCE_ACCESS_KEY')
 
-          msg = "No valid access key found; either pass the value into `Options#new` or set with ENV['SAUCE_ACCESS_KEY']"
+          msg = 'No valid access key found; '\
+"either pass the value into `Options#new` or set with ENV['SAUCE_ACCESS_KEY']"
           expect { options }.to raise_error(AuthenticationError, msg)
 
           ENV['SAUCE_ACCESS_KEY'] = access_key
@@ -93,7 +96,6 @@ module Saucer
       it 'raises Exception if value is incorrect' do
         expect { options.data_center = :INVALID }.to raise_error(ArgumentError, /INVALID is an invalid data center/)
       end
-
     end
 
     describe '#capabilities' do

@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'sauce_whisk'
 
 module Saucer
   class Session
-
     def self.start(options)
       driver = Selenium::WebDriver.for :remote, url: options.url, desired_capabilities: options.capabilities
       new(driver, options)
@@ -18,21 +19,20 @@ module Saucer
       SauceWhisk.data_center = options.data_center
     end
 
-
     def comment=(comment)
       @driver.execute_script("sauce: context=#{comment}")
     end
 
     def stop_network
-      @driver.execute_script("sauce: stop network")
+      @driver.execute_script('sauce: stop network')
     end
 
     def start_network
-      @driver.execute_script("sauce: start network")
+      @driver.execute_script('sauce: start network')
     end
 
     def breakpoint
-      @driver.execute_script("sauce: break")
+      @driver.execute_script('sauce: break')
     end
 
     def result=(res)
