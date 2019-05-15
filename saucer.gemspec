@@ -30,14 +30,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
 
-  spec.add_dependency 'parallel_split_test'
-  spec.add_dependency 'require_all'
-  spec.add_dependency 'selenium-webdriver'
-  spec.add_dependency 'sauce_whisk'
-  spec.add_dependency 'sauce_platforms'
-  spec.add_dependency 'json'
+  spec.add_runtime_dependency 'selenium-webdriver'
+  spec.add_runtime_dependency 'sauce_whisk'
+  spec.add_runtime_dependency 'json'
 end
