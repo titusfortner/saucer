@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module Saucer
-  VERSION = '0.6.5'
+  VERSION = '1.0.0.alpha'
 end

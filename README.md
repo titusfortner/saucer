@@ -1,94 +1,105 @@
 # Saucer
 
-Convenience methods for running your Ruby tests on Sauce Labs
+Make running your tests on Sauce Labs easier with these helpful wrappers and convenience methods
 
 ## Disclaimer
 *This code is provided on an "AS-IS” basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement. Your tests and testing environments may require you to modify this framework. Issues regarding this framework should be submitted through GitHub. For questions regarding Sauce Labs integration, please see the Sauce Labs documentation at https://wiki.saucelabs.com/. This framework is not maintained by Sauce Labs Support.*
 
 ## Installation
 
-Add this line to your application's Gemfile:
+In your Gemfile: 
+
+`gem 'saucer'
+
+In your project:
 
 ```ruby
-gem 'saucer'
+require 'saucer'
 ```
 
 ## Usage
 
-#### Configuration
-
-Can optionally pass in a `Config::Selenium` instance with any of the 
-[supported Test Configuration Options](https://wiki.saucelabs.com/display/DOCS/Test+Configuration+Options)
-Note that Ruby syntax is a `Symbol` with snake_case and not `String` with camelCase
+#### Starting the Driver
+Use Saucer to start your sessions
 ```ruby
-config_selenium = Config::Selenium.new(version: '53', browser_name: :firefox)
-@driver = Driver.new(config_selenium)
+@session = Saucer::Session.begin
+@driver = @session.driver
+```
+Optionally you can create options with various parameters to pass into `Session.begin`
+```ruby
+options = Saucer::Options.new(browser_name: 'Safari', 
+                              browser_version: '12.0',
+                              platform_name: 'macOS 10.14')
+@session = Saucer::Session.begin(options)
+@driver = @session.driver
 ```
 
-#### Cucumber
-RSpec doesn't need to be concerned with this, but Cucumber needs an extra step in `env.rb`:
+#### Finishing the session
+You can still quit the driver yourself if you'd like
+```ruby
+@driver.quit
+```
+You get some automatic data population if you end the Session
+```ruby
+@session.end
+```
+
+#### Automatic Data Population
+To automatically pass in the test name, populate pass/fail and provide exception information:
+RSpec doesn't need to do anything, but Cucumber will need to specify the scenario information
+in the `env.rb` or `hooks.rb` file.
 ```ruby
 Before do |scenario|
-  Saucer::Config::Sauce.scenario = scenario
-  @driver = Saucer::Driver.new
-end
-
-After do |scenario|
-  Saucer::Config::Sauce.scenario = scenario
-  @driver.quit
+  options = Saucer::Options.new(scenario: scenario)
+  session = Saucer::Session.begin(options)
+  @driver = session.driver
 end
 ```
 
-#### Parallel
-The most basic usage for parallel execution is to define the following Rake task, which 
-will every spec in the spec directory in 4 processes on the default Sauce platform (Linux with Chrome v48)
-
+#### Session Commands
+Saucer provides a number of custom methods as part of the session instance:
 ```ruby
-Saucer::Parallel.new.run
+# Add useful information to a test after initializing a session
+@session.comment = "Foo"
+@session.tags = %w[foo bar]
+@session.tags << 'foobar'
+@session.data = {foo: 'bar'}
+@session.data[:bar] = 'foo'
+
+# These things should be set automatically, but can be set manually
+@session.name = 'Test Name'
+@session.build = 'Build Name'
+@session.result = 'passed'
+@session.result = 'failed'
+
+# Special Features that might be useful
+@session.stop_network
+@session.start_network
+@session.breakpoint
+
+# This will cause an error, but is available as an option 
+session.stop
+
+# These things can be done after the session has ended
+@session.save_screenshots
+@session.save_log(log_type: :selenium) 
+@session.save_log(log_type: :sauce) 
+@session.save_log(log_type: :automator) 
+@session.save_logs
+@session.save_video
+@session.save_assets
+@session.delete_assets
 ```
 
-To Specify basic number of processes, a specific subdirectory (Cucumber or RSpec), and
-reporting output file:
-
-```ruby
-Saucer::Parallel.new(number: 7,
-                     path: 'features/foo',
-                     output: 'foo').run
-```
-
-
-To specify Sauce configurations, create a Rake Task that takes parameters like this:
-
-```ruby
-task :parallel_sauce do
-  configs = [{os: :mac_10_10, browser: :chrome, browser_version: 38},
-             {os: :mac_10_11, browser: :firefox, browser_version: 46},
-             {os: :mac_10_8, browser: :chrome, browser_version: 42}]
-
-  platforms = configs.map { |c| Saucer::PlatformConfiguration.new(c) }
-
-  Saucer::Parallel.new(platforms: platforms).run
-end
-```
-
-or you can use the default rake task and define your configurations in 
-`configs/platform_configs.yml` like this:
-```yaml
-  - :os: :mac_10_10
-    :browser: :chrome
-    :browser_version: 38
-  - :os: :mac_10_11
-    :browser: :firefox
-    :browser_version: 46
-  - :os: :mac_10_8
-    :browser: :chrome
-    :browser_version: 42
-```
+#### Additional API Interactions
+A more fully featured wrapping of the Sauce API is planned for upcoming releases.
+For now, make use of [SauceWhisk](https://github.com/saucelabs/sauce_whisk).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/saucer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/titusfortner/saucer.
 
-## License
+## License & Copyright
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+see LICENSE.txt for full details and copyright.
