@@ -1,0 +1,46 @@
+AllCops:
+  TargetRubyVersion: 2.4.6
+
+require:
+  - rubocop-rspec
+  - rubocop-performance
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'saucer.gemspec'
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+  Exclude:
+    - 'lib/saucer/asset_management.rb'
+
+Metrics/ClassLength:
+  Max: 105
+
+Metrics/MethodLength:
+  Max: 13
+  Exclude:
+    - 'lib/saucer/asset_management.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*'
