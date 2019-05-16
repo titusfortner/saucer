@@ -88,6 +88,7 @@ module Saucer
       save
       driver.quit
 
+      # TODO: Move this code into asset management for performance
       wait_until_finished
     end
 

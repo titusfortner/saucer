@@ -15,9 +15,9 @@ module Saucer
     VALID = W3C + SAUCE
 
     attr_accessor :url, :scenario
-    attr_reader :data_center
+    attr_reader :data_center, :remaining
 
-    def initialize(**opts)
+    def initialize(opts)
       VALID.each do |option|
         self.class.__send__(:attr_accessor, option)
         next unless opts.key?(option)
@@ -33,6 +33,9 @@ module Saucer
 
       opts.key?(:url) ? @url = opts[:url] : self.data_center = :US_WEST
       @scenario = opts[:scenario] if opts.key?(:scenario)
+
+      # TODO: - validate that these all include `:`
+      @remaining = opts
     end
 
     def capabilities
@@ -50,7 +53,7 @@ module Saucer
         hash[option] = value
       end
 
-      w3c.merge('sauce:options' => sauce)
+      w3c.merge('sauce:options' => sauce).merge(remaining)
     end
     alias to_h capabilities
 
