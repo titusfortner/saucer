@@ -30,6 +30,7 @@ module Saucer
       @platform_name ||= 'Windows 10'
       @browser_version ||= 'latest'
       @selenium_version ||= '3.141.59'
+      @iedriver_version ||= '3.141.59' if @browser_name == 'internet explorer'
 
       opts.key?(:url) ? @url = opts[:url] : self.data_center = :US_WEST
       @scenario = opts[:scenario] if opts.key?(:scenario)
