@@ -52,6 +52,7 @@ module Saucer
 
       describe '#save' do
         let(:job) { instance_double(SauceWhisk::Job) }
+
         before do
           allow(Selenium::WebDriver).to receive(:for).and_return(driver)
           allow(SauceWhisk::Jobs).to receive(:save)
@@ -96,11 +97,11 @@ module Saucer
           session.save
 
           expect(SauceWhisk::Jobs).to have_received(:save).with(job)
-          expect(job).to have_received(:custom_data=).with({foo: 'bar', bar: 'foo'})
+          expect(job).to have_received(:custom_data=).with(foo: 'bar', bar: 'foo')
         end
 
         it 'sets visibility' do
-          pending "Not yet supported by SauceWhisk: https://github.com/saucelabs/sauce_whisk/issues/63"
+          pending 'Not yet supported by SauceWhisk: https://github.com/saucelabs/sauce_whisk/issues/63'
 
           job = instance_double(SauceWhisk::Job, id: '1234', updated_fields: [:visibility])
           allow(job).to receive(:visibility=)
@@ -118,7 +119,7 @@ module Saucer
         end
       end
 
-      context 'status' do
+      context 'with status' do
         before { allow(Selenium::WebDriver).to receive(:for).and_return(driver) }
 
         it 'sets result' do
@@ -146,7 +147,7 @@ module Saucer
 
         it 'deletes a stopped job' do
           allow(SauceWhisk::Jobs).to receive(:stop)
-          response = instance_double(RestClient::Response, body: {'value' => "Success"}.to_json)
+          response = instance_double(RestClient::Response, body: {'value' => 'Success'}.to_json)
           allow(SauceWhisk::Jobs).to receive(:delete_job).with('job_id').and_return(response)
 
           session.stop
@@ -157,15 +158,15 @@ module Saucer
         end
       end
 
-      context 'assets' do
-        let(:base_path) { File.expand_path("../../assets/job_id/", __FILE__) }
+      context 'with assets' do
+        let(:base_path) { File.expand_path('../assets/job_id', __dir__) }
         let(:logs) { "#{base_path}/logs/" }
         let(:screenshots) { "#{base_path}/screenshots/" }
         let(:videos) { "#{base_path}/videos/" }
 
         before do
           allow(Selenium::WebDriver).to receive(:for).and_return(driver)
-          FileUtils.remove_dir(base_path) if File.exists?(base_path)
+          FileUtils.remove_dir(base_path) if File.exist?(base_path)
         end
 
         it 'saves screenshots' do
@@ -270,9 +271,9 @@ module Saucer
       end
 
       it 'creates a session with default data' do
-        expected = {page_object: 'unknown',
+        expected = {page_objects: 'unknown',
                     language: "Ruby v#{Selenium::WebDriver::Platform.ruby_version}",
-                    runner: "rspec v#{RSpec::Version::STRING}",
+                    test_runner: "rspec v#{RSpec::Version::STRING}",
                     selenium_version: Bundler.environment.specs.to_hash['selenium-webdriver'].first.version,
                     test_library: 'unknown',
                     operating_system: Selenium::WebDriver::Platform.os}
@@ -290,7 +291,7 @@ module Saucer
 
     describe '#end' do
       it 'fails' do
-        exception = instance_double(RuntimeError, inspect: 'inspected', backtrace: ['1', '2'])
+        exception = instance_double(RuntimeError, inspect: 'inspected', backtrace: %w[1 2])
         job = instance_double(SauceWhisk::Job, end_time: '1')
 
         allow(RSpec.current_example).to receive(:exception).and_return(exception)
@@ -331,7 +332,7 @@ module Saucer
         allow(job).to receive(:tags=)
         allow(job).to receive(:custom_data=)
 
-        tags = ['foo', 'bar']
+        tags = %w[foo bar]
         session.tags = tags
 
         session.end
