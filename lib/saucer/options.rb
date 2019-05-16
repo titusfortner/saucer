@@ -14,7 +14,7 @@ module Saucer
 
     VALID = W3C + SAUCE
 
-    attr_accessor :url
+    attr_accessor :url, :scenario
     attr_reader :data_center
 
     def initialize(**opts)
@@ -32,6 +32,7 @@ module Saucer
       @selenium_version ||= '3.141.59'
 
       opts.key?(:url) ? @url = opts[:url] : self.data_center = :US_WEST
+      @scenario = opts[:scenario] if opts.key?(:scenario)
     end
 
     def capabilities

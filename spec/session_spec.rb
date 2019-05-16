@@ -5,7 +5,7 @@ require 'spec_helper'
 module Saucer
   describe Session do
     let(:options) { Options.new }
-    let(:driver) { instance_double(Selenium::WebDriver::Remote::Driver, session_id: 'job_id') }
+    let(:driver) { instance_double(Selenium::WebDriver::Remote::Driver, session_id: 'job_id', quit: nil) }
     let(:session) { Session.new(driver, options) }
 
     describe '#new' do
@@ -48,14 +48,18 @@ module Saucer
     end
 
     describe 'api commands' do
-      let(:session) { Session.start }
+      let(:session) { Session.begin }
 
       describe '#save' do
-        before { allow(Selenium::WebDriver).to receive(:for).and_return(driver) }
-        it 'sets test name' do
+        let(:job) { instance_double(SauceWhisk::Job) }
+        before do
+          allow(Selenium::WebDriver).to receive(:for).and_return(driver)
           allow(SauceWhisk::Jobs).to receive(:save)
-          job = instance_double(SauceWhisk::Job)
           allow(SauceWhisk::Jobs).to receive(:fetch).and_return(job)
+          allow(job).to receive(:custom_data=)
+        end
+
+        it 'sets test name' do
           allow(job).to receive(:name=)
 
           session.name = 'Test Name'
@@ -66,9 +70,6 @@ module Saucer
         end
 
         it 'sets build name' do
-          allow(SauceWhisk::Jobs).to receive(:save)
-          job = instance_double(SauceWhisk::Job)
-          allow(SauceWhisk::Jobs).to receive(:fetch).and_return(job)
           allow(job).to receive(:build=)
 
           session.build = 'Build Name'
@@ -79,9 +80,6 @@ module Saucer
         end
 
         it 'sets tags' do
-          allow(SauceWhisk::Jobs).to receive(:save)
-          job = instance_double(SauceWhisk::Job)
-          allow(SauceWhisk::Jobs).to receive(:fetch).and_return(job)
           allow(job).to receive(:tags=)
 
           session.tags = %w[foo bar]
@@ -93,11 +91,6 @@ module Saucer
         end
 
         it 'sets custom data' do
-          allow(SauceWhisk::Jobs).to receive(:save)
-          job = instance_double(SauceWhisk::Job)
-          allow(SauceWhisk::Jobs).to receive(:fetch).and_return(job)
-          allow(job).to receive(:custom_data=)
-
           session.data = {foo: 'bar'}
           session.data[:bar] = 'foo'
           session.save
@@ -252,12 +245,15 @@ module Saucer
       end
     end
 
-    describe '#self.start' do
+    describe '#self.begin' do
       it 'creates a session without options' do
-        allow(Selenium::WebDriver).to receive(:for).and_return(driver)
-        default_options = Options.new
+        allow(Time).to receive(:now).and_return('12345')
 
-        expect(Session.start).to be_a(Session)
+        allow(Selenium::WebDriver).to receive(:for).and_return(driver)
+        default_options = Options.new(name: 'Saucer::Session#self.begin creates a session without options',
+                                      build: 'Local Execution - 12345')
+
+        expect(Session.begin).to be_a(Session)
 
         args = [:remote, {url: default_options.url, desired_capabilities: default_options.capabilities}]
         expect(Selenium::WebDriver).to have_received(:for).with(*args)
@@ -267,10 +263,93 @@ module Saucer
         allow(Selenium::WebDriver).to receive(:for).and_return(driver)
         options = Options.new
 
-        expect(Session.start(options)).to be_a(Session)
+        expect(Session.begin(options)).to be_a(Session)
 
         args = [:remote, {url: options.url, desired_capabilities: options.capabilities}]
         expect(Selenium::WebDriver).to have_received(:for).with(*args)
+      end
+
+      it 'creates a session with default data' do
+        expected = {page_object: 'unknown',
+                    language: "Ruby v#{Selenium::WebDriver::Platform.ruby_version}",
+                    runner: "rspec v#{RSpec::Version::STRING}",
+                    selenium_version: Bundler.environment.specs.to_hash['selenium-webdriver'].first.version,
+                    test_library: 'unknown',
+                    operating_system: Selenium::WebDriver::Platform.os}
+
+        job = instance_double(SauceWhisk::Job)
+        allow(SauceWhisk::Jobs).to receive(:fetch).and_return(job)
+        allow(SauceWhisk::Jobs).to receive(:save).with(job)
+        allow(job).to receive(:custom_data=)
+
+        session.save
+
+        expect(job).to have_received(:custom_data=).with(expected)
+      end
+    end
+
+    describe '#end' do
+      it 'fails' do
+        exception = instance_double(RuntimeError, inspect: 'inspected', backtrace: ['1', '2'])
+        job = instance_double(SauceWhisk::Job, end_time: '1')
+
+        allow(RSpec.current_example).to receive(:exception).and_return(exception)
+        allow(session).to receive(:save)
+        allow(SauceWhisk::Jobs).to receive(:fetch).with('job_id').and_return(job)
+        allow(SauceWhisk::Jobs).to receive(:change_status)
+
+        session.end
+
+        expect(SauceWhisk::Jobs).to have_received(:change_status).with('job_id', false)
+      end
+
+      it 'passes' do
+        job = instance_double(SauceWhisk::Job, end_time: '1')
+
+        allow(RSpec.current_example).to receive(:exception)
+        allow(session).to receive(:save)
+        allow(SauceWhisk::Jobs).to receive(:fetch).with('job_id').and_return(job)
+        allow(SauceWhisk::Jobs).to receive(:change_status)
+
+        session.end
+
+        expect(SauceWhisk::Jobs).to have_received(:change_status).with('job_id', true)
+      end
+
+      it 'saves session' do
+        job = instance_double(SauceWhisk::Job,
+                              updated_fields: %i[custom_data name build],
+                              custom_data: {foo: 'bar'},
+                              name: 'Test Name',
+                              build: 'Build Name',
+                              id: 'job_id',
+                              end_time: '1')
+
+        allow(SauceWhisk::Jobs).to receive(:fetch).with('job_id').and_return(job)
+        allow(SauceWhisk::Jobs).to receive(:change_status)
+        allow(SauceWhisk::Jobs).to receive(:put)
+        allow(job).to receive(:tags=)
+        allow(job).to receive(:custom_data=)
+
+        tags = ['foo', 'bar']
+        session.tags = tags
+
+        session.end
+
+        json = '{"custom-data":{"foo":"bar"},"name":"Test Name","build":"Build Name"}'
+        expect(SauceWhisk::Jobs).to have_received(:put).with('job_id', json)
+      end
+
+      it 'quits the driver' do
+        job = instance_double(SauceWhisk::Job, end_time: '1')
+        allow(SauceWhisk::Jobs).to receive(:fetch).with('job_id').and_return(job)
+        allow(job).to receive(:custom_data=)
+        allow(SauceWhisk::Jobs).to receive(:save).with(job)
+        allow(SauceWhisk::Jobs).to receive(:change_status)
+
+        session.end
+
+        expect(session.driver).to have_received(:quit)
       end
     end
   end

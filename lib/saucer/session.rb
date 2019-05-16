@@ -4,14 +4,45 @@ require 'sauce_whisk'
 
 module Saucer
   class Session
-    def self.start(options = nil)
-      options ||= Options.new
-      driver = Selenium::WebDriver.for :remote, url: options.url, desired_capabilities: options.capabilities
-      new(driver, options)
+    class << self
+      def begin(options = nil, scenario: nil)
+        options ||= Options.new(scenario: scenario)
+        options.name ||= test_name if test_name
+        options.build ||= build_name
+
+        driver = Selenium::WebDriver.for :remote, url: options.url, desired_capabilities: options.capabilities
+        new(driver, options)
+      end
+
+      def test_name
+        if RSpec.respond_to?(:current_example) && !RSpec.current_example.nil?
+          RSpec.current_example.full_description
+        elsif scenario
+          scenario.source.map(&:name).join(" ")
+        else
+          nil
+        end
+      end
+
+      def build_name
+        if ENV['BUILD_NAME']
+          ENV['BUILD_NAME']
+        elsif ENV['BUILD_TAG']
+          ENV['BUILD_TAG']
+        elsif ENV['TRAVIS_JOB_NUMBER']
+          "#{ENV['TRAVIS_REPO_SLUG'][/[^\/]+$/]}: #{ENV['TRAVIS_JOB_NUMBER']}"
+        elsif ENV['SAUCE_BAMBOO_BUILDNUMBER']
+          ENV['SAUCE_BAMBOO_BUILDNUMBER']
+        elsif ENV['CIRCLE_BUILD_NUM']
+          "#{ENV['CIRCLE_JOB']}: #{ENV['CIRCLE_BUILD_NUM']}"
+        else
+          "Local Execution - #{Time.now.to_i}"
+        end
+      end
     end
 
     attr_accessor :tags, :data
-    attr_reader :driver, :options, :job_id
+    attr_reader :driver, :options, :job_id, :scenario, :runner
 
     def initialize(driver, options)
       @driver = driver
@@ -19,8 +50,89 @@ module Saucer
       @job_id = driver.session_id
       @tags = []
       @data = {}
+      @scenario = options.scenario
+      @runner = if RSpec.respond_to?(:current_example) && !RSpec.current_example.nil?
+                  :rspec
+                elsif @scenario
+                  :cucumber
+                else
+                  nil # unknown
+                end
 
+      generate_data
       SauceWhisk.data_center = options.data_center
+    end
+
+    def generate_data
+      gems = Bundler.definition.specs.map(&:name).each_with_object({}) do |gem_name, gems|
+        next if Bundler.environment.specs.to_hash[gem_name].empty?
+        gems[gem_name] = Bundler.environment.specs.to_hash[gem_name].first.version
+      end
+
+      data[:selenium_version] = gems['selenium-webdriver']
+
+      data[:test_library] = if gems['watir'] && gems['capybara']
+                              'multiple'
+                            elsif gems['capybara']
+                              'capybara'
+                            elsif gems['watir']
+                              'watir'
+                            else
+                              'unknown'
+                            end
+
+      page_objects = %w(site_prism page-object watirsome watir_drops) & gems.keys
+
+      data[:page_object] = if page_objects.size > 1
+                             'multiple'
+                           elsif page_objects.empty?
+                             'unknown'
+                           else
+                             page_objects.first
+                           end
+
+
+      data[:runner] = gems[runner.to_s] ? "#{runner} v#{gems[runner.to_s]}" : "Unknown"
+
+      data[:language] = "Ruby v#{Selenium::WebDriver::Platform.ruby_version}"
+      data[:ci_tool] = Selenium::WebDriver::Platform.ci if Selenium::WebDriver::Platform.ci
+      data[:operating_system] = Selenium::WebDriver::Platform.os
+    end
+
+    def end
+      self.result = result unless result.nil?
+      if exception
+        self.data[:error] = exception.inspect
+        self.data[:stacktrace] = exception.backtrace
+      end
+      save
+      driver.quit
+
+      start_time = Time.now
+      loop do
+        break if details.end_time || Time.now - start_time > 10
+      end
+
+    end
+
+    def result
+      if runner == :rspec
+        RSpec.current_example.exception.nil?
+      elsif runner == :cucumber
+        scenario.passed?
+      else
+        nil
+      end
+    end
+
+    def exception
+      if runner == :rspec
+        RSpec.current_example.exception
+      elsif runner == :cucumber
+        scenario.exception
+      else
+        nil
+      end
     end
 
     # Custom JS Commands
@@ -83,6 +195,10 @@ module Saucer
         retry if (Time.now - start_time < 5)
         raise
       end
+    end
+
+    def details
+      SauceWhisk::Jobs.fetch(@job_id)
     end
 
     # Handles Assets
