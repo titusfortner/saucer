@@ -1,3 +1,6 @@
+### 1.0.0.beta2 (2019-05-16)
+* Add iedriver version by default
+
 ### 1.0.0.beta (2019-05-16)
 * Bug fixes
 
