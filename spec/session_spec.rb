@@ -127,7 +127,7 @@ module Saucer
 
           session.result = 'passed'
 
-          expect(SauceWhisk::Jobs).to have_received(:change_status).with('job_id', 'passed')
+          expect(SauceWhisk::Jobs).to have_received(:change_status).with('job_id', true)
         end
 
         it 'stops job' do

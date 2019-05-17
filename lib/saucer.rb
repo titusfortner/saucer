@@ -8,6 +8,7 @@ require 'saucer/custom_commands'
 require 'saucer/job_update'
 require 'saucer/runners'
 require 'saucer/session'
+require 'saucer/platform'
 require 'saucer/version'
 
 module Saucer

@@ -1,0 +1,2286 @@
+---
+win_10_ie_11:
+  :browser_name: internet explorer
+  :browser_version: '11'
+  :platform_name: Windows 10
+win_10_edge_18:
+  :browser_name: MicrosoftEdge
+  :browser_version: '18'
+  :platform_name: Windows 10
+mac_13_safari_12:
+  :browser_name: safari
+  :browser_version: '12'
+  :platform_name: Mac 10.13
+mac_11_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Mac 10.11
+mac_11_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Mac 10.11
+mac_11_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Mac 10.11
+mac_11_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Mac 10.11
+mac_11_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Mac 10.11
+mac_11_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Mac 10.11
+mac_11_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Mac 10.11
+mac_11_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Mac 10.11
+mac_11_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Mac 10.11
+mac_11_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Mac 10.11
+mac_11_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Mac 10.11
+mac_11_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Mac 10.11
+mac_11_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Mac 10.11
+mac_11_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Mac 10.11
+mac_11_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Mac 10.11
+mac_11_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Mac 10.11
+mac_11_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Mac 10.11
+mac_11_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Mac 10.11
+mac_11_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Mac 10.11
+mac_11_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Mac 10.11
+mac_11_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Mac 10.11
+mac_11_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Mac 10.11
+mac_11_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Mac 10.11
+mac_11_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Mac 10.11
+mac_11_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Mac 10.11
+mac_11_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Mac 10.11
+mac_11_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Mac 10.11
+mac_11_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Mac 10.11
+mac_11_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Mac 10.11
+mac_11_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Mac 10.11
+mac_11_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Mac 10.11
+mac_11_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Mac 10.11
+mac_11_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Mac 10.11
+mac_11_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Mac 10.11
+mac_11_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Mac 10.11
+mac_11_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Mac 10.11
+mac_11_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Mac 10.11
+mac_11_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Mac 10.11
+mac_11_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Mac 10.11
+mac_11_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Mac 10.11
+mac_11_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Mac 10.11
+mac_11_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Mac 10.11
+mac_11_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Mac 10.11
+mac_11_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Mac 10.11
+mac_11_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Mac 10.11
+mac_11_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Mac 10.11
+mac_11_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Mac 10.11
+mac_11_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Mac 10.11
+mac_11_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Mac 10.11
+mac_11_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Mac 10.11
+mac_11_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Mac 10.11
+mac_11_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Mac 10.11
+mac_11_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Mac 10.11
+mac_11_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Mac 10.11
+mac_11_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Mac 10.11
+mac_11_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Mac 10.11
+mac_11_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Mac 10.11
+mac_11_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Mac 10.11
+mac_11_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Mac 10.11
+mac_11_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Mac 10.11
+mac_11_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Mac 10.11
+mac_11_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Mac 10.11
+  :chromedriver_version: 75.0.3770.8
+win_10_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Windows 10
+win_10_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Windows 10
+win_10_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Windows 10
+win_10_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Windows 10
+win_10_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Windows 10
+win_10_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Windows 10
+win_10_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Windows 10
+win_10_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Windows 10
+win_10_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Windows 10
+win_10_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Windows 10
+win_10_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Windows 10
+win_10_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Windows 10
+win_10_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Windows 10
+win_10_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Windows 10
+win_10_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Windows 10
+win_10_ff_dev:
+  :browser_name: firefox
+  :browser_version: dev
+  :platform_name: Windows 10
+win_10_edge_13:
+  :browser_name: MicrosoftEdge
+  :browser_version: '13'
+  :platform_name: Windows 10
+win_10_chrome_26:
+  :browser_name: chrome
+  :version: '26'
+  :platform: Windows 10
+win_10_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Windows 10
+win_10_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Windows 10
+win_10_chrome_29:
+  :browser_name: chrome
+  :version: '29'
+  :platform: Windows 10
+win_10_chrome_30:
+  :browser_name: chrome
+  :version: '30'
+  :platform: Windows 10
+win_10_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Windows 10
+win_10_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Windows 10
+win_10_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Windows 10
+win_10_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Windows 10
+win_10_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Windows 10
+win_10_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Windows 10
+win_10_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Windows 10
+win_10_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Windows 10
+win_10_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Windows 10
+win_10_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Windows 10
+win_10_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Windows 10
+win_10_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Windows 10
+win_10_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Windows 10
+win_10_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Windows 10
+win_10_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Windows 10
+win_10_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Windows 10
+win_10_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Windows 10
+win_10_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Windows 10
+win_10_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Windows 10
+win_10_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Windows 10
+win_10_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Windows 10
+win_10_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Windows 10
+win_10_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Windows 10
+win_10_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Windows 10
+win_10_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Windows 10
+win_10_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Windows 10
+win_10_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Windows 10
+win_10_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Windows 10
+win_10_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Windows 10
+win_10_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Windows 10
+win_10_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Windows 10
+win_10_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Windows 10
+win_10_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Windows 10
+win_10_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Windows 10
+win_10_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Windows 10
+win_10_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Windows 10
+win_10_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Windows 10
+win_10_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Windows 10
+win_10_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Windows 10
+win_10_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Windows 10
+win_10_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Windows 10
+win_10_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Windows 10
+win_10_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Windows 10
+win_10_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Windows 10
+win_10_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Windows 10
+  :chromedriver_version: 75.0.3770.8
+win_8_ie_10:
+  :browser_name: internet explorer
+  :browser_version: '10'
+  :platform_name: Windows 2012
+win_8_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Windows 2012
+win_8_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Windows 2012
+win_8_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Windows 2012
+win_8_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Windows 2012
+win_8_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Windows 2012
+win_8_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Windows 2012
+win_8_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Windows 2012
+win_8_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Windows 2012
+win_8_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Windows 2012
+win_8_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Windows 2012
+win_8_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Windows 2012
+win_8_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Windows 2012
+win_8_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Windows 2012
+win_8_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Windows 2012
+win_8_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Windows 2012
+win_8_ff_dev:
+  :browser_name: firefox
+  :browser_version: dev
+  :platform_name: Windows 2012
+win_8_chrome_26:
+  :browser_name: chrome
+  :version: '26'
+  :platform: Windows 2012
+win_8_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Windows 2012
+win_8_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Windows 2012
+win_8_chrome_29:
+  :browser_name: chrome
+  :version: '29'
+  :platform: Windows 2012
+win_8_chrome_30:
+  :browser_name: chrome
+  :version: '30'
+  :platform: Windows 2012
+win_8_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Windows 2012
+win_8_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Windows 2012
+win_8_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Windows 2012
+win_8_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Windows 2012
+win_8_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Windows 2012
+win_8_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Windows 2012
+win_8_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Windows 2012
+win_8_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Windows 2012
+win_8_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Windows 2012
+win_8_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Windows 2012
+win_8_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Windows 2012
+win_8_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Windows 2012
+win_8_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Windows 2012
+win_8_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Windows 2012
+win_8_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Windows 2012
+win_8_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Windows 2012
+win_8_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Windows 2012
+win_8_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Windows 2012
+win_8_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Windows 2012
+win_8_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Windows 2012
+win_8_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Windows 2012
+win_8_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Windows 2012
+win_8_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Windows 2012
+win_8_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Windows 2012
+win_8_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Windows 2012
+win_8_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Windows 2012
+win_8_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Windows 2012
+win_8_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Windows 2012
+win_8_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Windows 2012
+win_8_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Windows 2012
+win_8_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Windows 2012
+win_8_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Windows 2012
+win_8_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Windows 2012
+win_8_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Windows 2012
+win_8_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Windows 2012
+win_8_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Windows 2012
+win_8_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Windows 2012
+win_8_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Windows 2012
+win_8_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Windows 2012
+win_8_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Windows 2012
+win_8_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Windows 2012
+win_8_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Windows 2012
+win_8_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Windows 2012
+win_8_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Windows 2012
+win_8_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Windows 2012
+  :chromedriver_version: 75.0.3770.8
+win_8__1_ie_11:
+  :browser_name: internet explorer
+  :browser_version: '11'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Windows 2012 R2
+win_8__1_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Windows 2012 R2
+win_8__1_ff_dev:
+  :browser_name: firefox
+  :browser_version: dev
+  :platform_name: Windows 2012 R2
+win_8__1_chrome_26:
+  :browser_name: chrome
+  :version: '26'
+  :platform: Windows 2012 R2
+win_8__1_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Windows 2012 R2
+win_8__1_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Windows 2012 R2
+win_8__1_chrome_29:
+  :browser_name: chrome
+  :version: '29'
+  :platform: Windows 2012 R2
+win_8__1_chrome_30:
+  :browser_name: chrome
+  :version: '30'
+  :platform: Windows 2012 R2
+win_8__1_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Windows 2012 R2
+win_8__1_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Windows 2012 R2
+win_8__1_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Windows 2012 R2
+win_8__1_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Windows 2012 R2
+win_8__1_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Windows 2012 R2
+win_8__1_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Windows 2012 R2
+win_8__1_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Windows 2012 R2
+win_8__1_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Windows 2012 R2
+win_8__1_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Windows 2012 R2
+win_8__1_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Windows 2012 R2
+win_8__1_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Windows 2012 R2
+win_8__1_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Windows 2012 R2
+win_8__1_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Windows 2012 R2
+win_8__1_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Windows 2012 R2
+win_8__1_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Windows 2012 R2
+win_8__1_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Windows 2012 R2
+win_8__1_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Windows 2012 R2
+win_8__1_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Windows 2012 R2
+win_8__1_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Windows 2012 R2
+win_8__1_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Windows 2012 R2
+win_8__1_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Windows 2012 R2
+win_8__1_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Windows 2012 R2
+win_8__1_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Windows 2012 R2
+win_8__1_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Windows 2012 R2
+win_8__1_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Windows 2012 R2
+win_8__1_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Windows 2012 R2
+win_8__1_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Windows 2012 R2
+win_8__1_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Windows 2012 R2
+win_8__1_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Windows 2012 R2
+win_8__1_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Windows 2012 R2
+win_8__1_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Windows 2012 R2
+win_8__1_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Windows 2012 R2
+win_8__1_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Windows 2012 R2
+win_8__1_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Windows 2012 R2
+win_8__1_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Windows 2012 R2
+win_8__1_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Windows 2012 R2
+win_8__1_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Windows 2012 R2
+win_8__1_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Windows 2012 R2
+win_8__1_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Windows 2012 R2
+win_8__1_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Windows 2012 R2
+win_8__1_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Windows 2012 R2
+win_8__1_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Windows 2012 R2
+win_8__1_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Windows 2012 R2
+win_8__1_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Windows 2012 R2
+win_8__1_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Windows 2012 R2
+  :chromedriver_version: 75.0.3770.8
+win_10_edge_17:
+  :browser_name: MicrosoftEdge
+  :browser_version: '17'
+  :platform_name: Windows 10
+mac_14_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Mac 10.14
+mac_14_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Mac 10.14
+mac_14_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Mac 10.14
+mac_14_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Mac 10.14
+mac_14_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Mac 10.14
+mac_14_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Mac 10.14
+mac_14_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Mac 10.14
+mac_14_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Mac 10.14
+mac_14_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Mac 10.14
+mac_14_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Mac 10.14
+mac_14_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Mac 10.14
+mac_14_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Mac 10.14
+mac_14_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Mac 10.14
+mac_14_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Mac 10.14
+mac_14_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Mac 10.14
+mac_14_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Mac 10.14
+mac_14_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Mac 10.14
+mac_14_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Mac 10.14
+mac_14_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Mac 10.14
+mac_14_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Mac 10.14
+mac_14_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Mac 10.14
+mac_14_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Mac 10.14
+mac_14_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Mac 10.14
+mac_14_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Mac 10.14
+mac_14_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Mac 10.14
+mac_14_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Mac 10.14
+mac_14_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Mac 10.14
+mac_14_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Mac 10.14
+mac_14_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Mac 10.14
+mac_14_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Mac 10.14
+mac_14_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Mac 10.14
+mac_14_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Mac 10.14
+mac_14_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Mac 10.14
+mac_14_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Mac 10.14
+mac_14_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Mac 10.14
+mac_14_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Mac 10.14
+mac_14_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Mac 10.14
+mac_14_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Mac 10.14
+mac_14_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Mac 10.14
+mac_14_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Mac 10.14
+mac_14_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Mac 10.14
+mac_14_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Mac 10.14
+mac_14_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Mac 10.14
+mac_14_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Mac 10.14
+mac_14_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Mac 10.14
+mac_14_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Mac 10.14
+mac_14_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Mac 10.14
+  :chromedriver_version: 75.0.3770.8
+mac_14_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Mac 10.14
+mac_14_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Mac 10.14
+mac_14_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Mac 10.14
+mac_14_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Mac 10.14
+mac_14_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Mac 10.14
+mac_14_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Mac 10.14
+mac_14_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Mac 10.14
+mac_14_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Mac 10.14
+mac_14_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Mac 10.14
+mac_14_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Mac 10.14
+mac_14_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Mac 10.14
+mac_14_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Mac 10.14
+mac_14_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Mac 10.14
+mac_14_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Mac 10.14
+mac_14_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Mac 10.14
+mac_14_safari_12:
+  :browser_name: safari
+  :browser_version: '12'
+  :platform_name: Mac 10.14
+win_10_edge_14:
+  :browser_name: MicrosoftEdge
+  :browser_version: '14'
+  :platform_name: Windows 10
+win_10_edge_15:
+  :browser_name: MicrosoftEdge
+  :browser_version: '15'
+  :platform_name: Windows 10
+mac_12_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Mac 10.12
+mac_12_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Mac 10.12
+mac_12_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Mac 10.12
+mac_12_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Mac 10.12
+mac_12_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Mac 10.12
+mac_12_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Mac 10.12
+mac_12_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Mac 10.12
+mac_12_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Mac 10.12
+mac_12_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Mac 10.12
+mac_12_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Mac 10.12
+mac_12_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Mac 10.12
+mac_12_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Mac 10.12
+mac_12_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Mac 10.12
+mac_12_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Mac 10.12
+mac_12_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Mac 10.12
+mac_12_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Mac 10.12
+mac_12_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Mac 10.12
+mac_12_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Mac 10.12
+mac_12_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Mac 10.12
+mac_12_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Mac 10.12
+mac_12_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Mac 10.12
+mac_12_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Mac 10.12
+mac_12_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Mac 10.12
+mac_12_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Mac 10.12
+mac_12_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Mac 10.12
+mac_12_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Mac 10.12
+mac_12_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Mac 10.12
+mac_12_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Mac 10.12
+mac_12_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Mac 10.12
+mac_12_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Mac 10.12
+mac_12_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Mac 10.12
+mac_12_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Mac 10.12
+mac_12_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Mac 10.12
+mac_12_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Mac 10.12
+mac_12_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Mac 10.12
+mac_12_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Mac 10.12
+mac_12_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Mac 10.12
+mac_12_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Mac 10.12
+mac_12_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Mac 10.12
+mac_12_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Mac 10.12
+mac_12_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Mac 10.12
+mac_12_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Mac 10.12
+mac_12_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Mac 10.12
+mac_12_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Mac 10.12
+mac_12_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Mac 10.12
+mac_12_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Mac 10.12
+mac_12_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Mac 10.12
+mac_12_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Mac 10.12
+mac_12_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Mac 10.12
+mac_12_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Mac 10.12
+mac_12_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Mac 10.12
+mac_12_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Mac 10.12
+mac_12_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Mac 10.12
+mac_12_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Mac 10.12
+mac_12_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Mac 10.12
+mac_12_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Mac 10.12
+mac_12_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Mac 10.12
+mac_12_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Mac 10.12
+mac_12_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Mac 10.12
+mac_12_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Mac 10.12
+mac_12_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Mac 10.12
+mac_12_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Mac 10.12
+  :chromedriver_version: 75.0.3770.8
+mac_12_safari_10:
+  :browser_name: safari
+  :browser_version: '10'
+  :platform_name: Mac 10.12
+mac_13_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Mac 10.13
+mac_13_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Mac 10.13
+mac_13_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Mac 10.13
+mac_13_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Mac 10.13
+mac_13_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Mac 10.13
+mac_13_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Mac 10.13
+mac_13_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Mac 10.13
+mac_13_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Mac 10.13
+mac_13_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Mac 10.13
+mac_13_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Mac 10.13
+mac_13_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Mac 10.13
+mac_13_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Mac 10.13
+mac_13_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Mac 10.13
+mac_13_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Mac 10.13
+mac_13_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Mac 10.13
+mac_13_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Mac 10.13
+mac_13_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Mac 10.13
+mac_13_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Mac 10.13
+mac_13_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Mac 10.13
+mac_13_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Mac 10.13
+mac_13_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Mac 10.13
+mac_13_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Mac 10.13
+mac_13_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Mac 10.13
+mac_13_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Mac 10.13
+mac_13_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Mac 10.13
+mac_13_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Mac 10.13
+mac_13_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Mac 10.13
+mac_13_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Mac 10.13
+mac_13_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Mac 10.13
+mac_13_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Mac 10.13
+mac_13_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Mac 10.13
+mac_13_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Mac 10.13
+mac_13_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Mac 10.13
+mac_13_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Mac 10.13
+mac_13_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Mac 10.13
+mac_13_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Mac 10.13
+mac_13_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Mac 10.13
+mac_13_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Mac 10.13
+mac_13_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Mac 10.13
+mac_13_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Mac 10.13
+mac_13_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Mac 10.13
+mac_13_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Mac 10.13
+mac_13_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Mac 10.13
+mac_13_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Mac 10.13
+mac_13_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Mac 10.13
+mac_13_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Mac 10.13
+mac_13_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Mac 10.13
+  :chromedriver_version: 75.0.3770.8
+mac_13_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Mac 10.13
+mac_13_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Mac 10.13
+mac_13_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Mac 10.13
+mac_13_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Mac 10.13
+mac_13_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Mac 10.13
+mac_13_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Mac 10.13
+mac_13_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Mac 10.13
+mac_13_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Mac 10.13
+mac_13_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Mac 10.13
+mac_13_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Mac 10.13
+mac_13_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Mac 10.13
+mac_13_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Mac 10.13
+mac_13_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Mac 10.13
+mac_13_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Mac 10.13
+mac_13_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Mac 10.13
+mac_13_safari_11:
+  :browser_name: safari
+  :browser_version: '11'
+  :platform_name: Mac 10.13
+mac_12_safari_11:
+  :browser_name: safari
+  :browser_version: '11'
+  :platform_name: Mac 10.12
+win_7_ie_11:
+  :browser_name: internet explorer
+  :browser_version: '11'
+  :platform_name: Windows 2008
+win_10_edge_16:
+  :browser_name: MicrosoftEdge
+  :browser_version: '16'
+  :platform_name: Windows 10
+win_7_ie_10:
+  :browser_name: internet explorer
+  :browser_version: '10'
+  :platform_name: Windows 2008
+win_7_ff_53:
+  :browser_name: firefox
+  :browser_version: '53'
+  :platform_name: Windows 2008
+win_7_ff_54:
+  :browser_name: firefox
+  :browser_version: '54'
+  :platform_name: Windows 2008
+win_7_ff_55:
+  :browser_name: firefox
+  :browser_version: '55'
+  :platform_name: Windows 2008
+win_7_ff_56:
+  :browser_name: firefox
+  :browser_version: '56'
+  :platform_name: Windows 2008
+win_7_ff_57:
+  :browser_name: firefox
+  :browser_version: '57'
+  :platform_name: Windows 2008
+win_7_ff_58:
+  :browser_name: firefox
+  :browser_version: '58'
+  :platform_name: Windows 2008
+win_7_ff_59:
+  :browser_name: firefox
+  :browser_version: '59'
+  :platform_name: Windows 2008
+win_7_ff_60:
+  :browser_name: firefox
+  :browser_version: '60'
+  :platform_name: Windows 2008
+win_7_ff_61:
+  :browser_name: firefox
+  :browser_version: '61'
+  :platform_name: Windows 2008
+win_7_ff_62:
+  :browser_name: firefox
+  :browser_version: '62'
+  :platform_name: Windows 2008
+win_7_ff_63:
+  :browser_name: firefox
+  :browser_version: '63'
+  :platform_name: Windows 2008
+win_7_ff_64:
+  :browser_name: firefox
+  :browser_version: '64'
+  :platform_name: Windows 2008
+win_7_ff_65:
+  :browser_name: firefox
+  :browser_version: '65'
+  :platform_name: Windows 2008
+win_7_ff_66:
+  :browser_name: firefox
+  :browser_version: '66'
+  :platform_name: Windows 2008
+win_7_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Windows 2008
+win_7_ff_dev:
+  :browser_name: firefox
+  :browser_version: dev
+  :platform_name: Windows 2008
+win_7_chrome_26:
+  :browser_name: chrome
+  :version: '26'
+  :platform: Windows 2008
+win_7_chrome_27:
+  :browser_name: chrome
+  :version: '27'
+  :platform: Windows 2008
+win_7_chrome_28:
+  :browser_name: chrome
+  :version: '28'
+  :platform: Windows 2008
+win_7_chrome_29:
+  :browser_name: chrome
+  :version: '29'
+  :platform: Windows 2008
+win_7_chrome_30:
+  :browser_name: chrome
+  :version: '30'
+  :platform: Windows 2008
+win_7_chrome_31:
+  :browser_name: chrome
+  :version: '31'
+  :platform: Windows 2008
+win_7_chrome_32:
+  :browser_name: chrome
+  :version: '32'
+  :platform: Windows 2008
+win_7_chrome_33:
+  :browser_name: chrome
+  :version: '33'
+  :platform: Windows 2008
+win_7_chrome_34:
+  :browser_name: chrome
+  :version: '34'
+  :platform: Windows 2008
+win_7_chrome_35:
+  :browser_name: chrome
+  :version: '35'
+  :platform: Windows 2008
+win_7_chrome_36:
+  :browser_name: chrome
+  :version: '36'
+  :platform: Windows 2008
+win_7_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Windows 2008
+win_7_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Windows 2008
+win_7_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Windows 2008
+win_7_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Windows 2008
+win_7_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Windows 2008
+win_7_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Windows 2008
+win_7_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Windows 2008
+win_7_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Windows 2008
+win_7_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Windows 2008
+win_7_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Windows 2008
+win_7_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Windows 2008
+win_7_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Windows 2008
+win_7_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Windows 2008
+win_7_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Windows 2008
+win_7_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Windows 2008
+win_7_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Windows 2008
+win_7_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Windows 2008
+win_7_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Windows 2008
+win_7_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Windows 2008
+win_7_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Windows 2008
+win_7_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Windows 2008
+win_7_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Windows 2008
+win_7_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Windows 2008
+win_7_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Windows 2008
+win_7_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Windows 2008
+win_7_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Windows 2008
+win_7_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Windows 2008
+win_7_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Windows 2008
+win_7_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Windows 2008
+win_7_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Windows 2008
+win_7_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Windows 2008
+win_7_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Windows 2008
+win_7_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Windows 2008
+win_7_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Windows 2008
+win_7_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Windows 2008
+win_7_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Windows 2008
+win_7_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Windows 2008
+win_7_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Windows 2008
+win_7_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Windows 2008
+  :chromedriver_version: 75.0.3770.8
+mac_10_ff_beta:
+  :browser_name: firefox
+  :browser_version: beta
+  :platform_name: Mac 10.10
+mac_10_chrome_37:
+  :browser_name: chrome
+  :version: '37'
+  :platform: Mac 10.10
+mac_10_chrome_38:
+  :browser_name: chrome
+  :version: '38'
+  :platform: Mac 10.10
+mac_10_chrome_39:
+  :browser_name: chrome
+  :version: '39'
+  :platform: Mac 10.10
+mac_10_chrome_40:
+  :browser_name: chrome
+  :version: '40'
+  :platform: Mac 10.10
+mac_10_chrome_41:
+  :browser_name: chrome
+  :version: '41'
+  :platform: Mac 10.10
+mac_10_chrome_42:
+  :browser_name: chrome
+  :version: '42'
+  :platform: Mac 10.10
+mac_10_chrome_43:
+  :browser_name: chrome
+  :version: '43'
+  :platform: Mac 10.10
+mac_10_chrome_44:
+  :browser_name: chrome
+  :version: '44'
+  :platform: Mac 10.10
+mac_10_chrome_45:
+  :browser_name: chrome
+  :version: '45'
+  :platform: Mac 10.10
+mac_10_chrome_46:
+  :browser_name: chrome
+  :version: '46'
+  :platform: Mac 10.10
+mac_10_chrome_47:
+  :browser_name: chrome
+  :version: '47'
+  :platform: Mac 10.10
+mac_10_chrome_48:
+  :browser_name: chrome
+  :version: '48'
+  :platform: Mac 10.10
+mac_10_chrome_49:
+  :browser_name: chrome
+  :version: '49'
+  :platform: Mac 10.10
+mac_10_chrome_50:
+  :browser_name: chrome
+  :version: '50'
+  :platform: Mac 10.10
+mac_10_chrome_51:
+  :browser_name: chrome
+  :version: '51'
+  :platform: Mac 10.10
+mac_10_chrome_52:
+  :browser_name: chrome
+  :version: '52'
+  :platform: Mac 10.10
+mac_10_chrome_53:
+  :browser_name: chrome
+  :version: '53'
+  :platform: Mac 10.10
+mac_10_chrome_54:
+  :browser_name: chrome
+  :version: '54'
+  :platform: Mac 10.10
+mac_10_chrome_55:
+  :browser_name: chrome
+  :version: '55'
+  :platform: Mac 10.10
+mac_10_chrome_56:
+  :browser_name: chrome
+  :version: '56'
+  :platform: Mac 10.10
+mac_10_chrome_57:
+  :browser_name: chrome
+  :version: '57'
+  :platform: Mac 10.10
+mac_10_chrome_58:
+  :browser_name: chrome
+  :version: '58'
+  :platform: Mac 10.10
+mac_10_chrome_59:
+  :browser_name: chrome
+  :version: '59'
+  :platform: Mac 10.10
+mac_10_chrome_60:
+  :browser_name: chrome
+  :version: '60'
+  :platform: Mac 10.10
+mac_10_chrome_61:
+  :browser_name: chrome
+  :version: '61'
+  :platform: Mac 10.10
+mac_10_chrome_62:
+  :browser_name: chrome
+  :version: '62'
+  :platform: Mac 10.10
+mac_10_chrome_63:
+  :browser_name: chrome
+  :version: '63'
+  :platform: Mac 10.10
+mac_10_chrome_64:
+  :browser_name: chrome
+  :version: '64'
+  :platform: Mac 10.10
+mac_10_chrome_65:
+  :browser_name: chrome
+  :version: '65'
+  :platform: Mac 10.10
+mac_10_chrome_66:
+  :browser_name: chrome
+  :version: '66'
+  :platform: Mac 10.10
+mac_10_chrome_67:
+  :browser_name: chrome
+  :version: '67'
+  :platform: Mac 10.10
+mac_10_chrome_68:
+  :browser_name: chrome
+  :version: '68'
+  :platform: Mac 10.10
+mac_10_chrome_69:
+  :browser_name: chrome
+  :version: '69'
+  :platform: Mac 10.10
+mac_10_chrome_70:
+  :browser_name: chrome
+  :version: '70'
+  :platform: Mac 10.10
+mac_10_chrome_71:
+  :browser_name: chrome
+  :version: '71'
+  :platform: Mac 10.10
+mac_10_chrome_72:
+  :browser_name: chrome
+  :version: '72'
+  :platform: Mac 10.10
+mac_10_chrome_73:
+  :browser_name: chrome
+  :version: '73'
+  :platform: Mac 10.10
+mac_10_chrome_74:
+  :browser_name: chrome
+  :version: '74'
+  :platform: Mac 10.10
+mac_10_chrome_beta:
+  :browser_name: chrome
+  :browser_version: beta
+  :platform_name: Mac 10.10
+  :chromedriver_version: 75.0.3770.8
+win_7_ie_9:
+  :browser_name: internet explorer
+  :browser_version: '9'
+  :platform_name: Windows 2008

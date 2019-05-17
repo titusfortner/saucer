@@ -36,11 +36,11 @@ module Saucer
         raise APIError, "Can not retrieve log: #{response['message']}" if JSON.parse(response).key?('message')
       rescue NoMethodError
         # Sauce Log is Special
-        JSON.parse(response).map do |hash|
-          hash.map do |key, value|
+        JSON.parse(response).map { |hash|
+          hash.map { |key, value|
             "#{key}: #{value}"
-          end.join("\n")
-        end.join("\n\n")
+          }.join("\n")
+        }.join("\n\n")
       rescue JSON::ParserError, NoMethodError
         response
       rescue APIError

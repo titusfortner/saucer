@@ -8,7 +8,7 @@ module Saucer
     SAUCE = %i[access_key appium_version avoid_proxy build capture_html chromedriver_version command_timeout
                crmuxdriver_version custom_data disable_popup_handler extended_debugging firefox_adapter_version
                firefox_profile_url idle_timeout iedriver_version max_duration name parent_tunnel passed prerun
-               prevent_Requeue priority proxy_host public record_logs record_screenshots record_video
+               prevent_requeue priority proxy_host public record_logs record_screenshots record_video
                restricted_public_info screen_resolution selenium_version source tags time_zone tunnel_identifier
                username video_upload_on_pass].freeze
 
@@ -17,26 +17,31 @@ module Saucer
     attr_accessor :url, :scenario
     attr_reader :data_center, :remaining
 
-    def initialize(opts)
+    def initialize(opts = {})
+      opts = Platform.build.merge(opts) if ENV['PLATFORM']
+
+      create_instance_variables(opts)
+
+      validate_credentials
+      @browser_name ||= 'firefox'
+      @platform_name ||= 'Windows 10' unless opts[:platform]
+      @browser_version ||= 'latest' unless opts[:version]
+      @selenium_version ||= '3.141.59'
+      @iedriver_version ||= '3.141.59' if @browser_name == 'internet explorer'
+
+      opts.key?(:url) ? @url = opts[:url] : self.data_center = :US_WEST
+      @scenario = opts.delete(:scenario) if opts.key?(:scenario)
+
+      @remaining = opts
+    end
+
+    def create_instance_variables(opts)
       VALID.each do |option|
         self.class.__send__(:attr_accessor, option)
         next unless opts.key?(option)
 
         instance_variable_set("@#{option}", opts.delete(option))
       end
-
-      validate_credentials
-      @browser_name ||= 'firefox'
-      @platform_name ||= 'Windows 10'
-      @browser_version ||= 'latest'
-      @selenium_version ||= '3.141.59'
-      @iedriver_version ||= '3.141.59' if @browser_name == 'internet explorer'
-
-      opts.key?(:url) ? @url = opts[:url] : self.data_center = :US_WEST
-      @scenario = opts[:scenario] if opts.key?(:scenario)
-
-      # TODO: - validate that these all include `:`
-      @remaining = opts
     end
 
     def capabilities
@@ -54,7 +59,11 @@ module Saucer
         hash[option] = value
       end
 
-      w3c.merge('sauce:options' => sauce).merge(remaining)
+      if platform_name
+        w3c.merge('sauce:options' => sauce).merge(remaining)
+      else
+        w3c.merge(sauce).merge(remaining)
+      end
     end
     alias to_h capabilities
 

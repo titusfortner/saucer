@@ -19,8 +19,8 @@ require 'saucer'
 
 ## Usage
 
-#### Starting the Driver
-Use Saucer to start your sessions
+#### Starting a Session
+Use Saucer to create your driver
 ```ruby
 @session = Saucer::Session.begin
 @driver = @session.driver
@@ -32,6 +32,15 @@ options = Saucer::Options.new(browser_name: 'Safari',
                               platform_name: 'macOS 10.14')
 @session = Saucer::Session.begin(options)
 @driver = @session.driver
+```
+A common frustration is having difficulty remembering the correct String
+To populate the most common values, set the PLATFORM environment variable.
+The pattern is: `"#{os_name}_#{os_version}_#{browser_name}_#{browser_version}"`
+If the version needs to have a dot, replace it with a double space.
+All options can be found in: `config/platforms.yml`
+```ruby
+# Windows 8.1 with Internet Explorer 11
+ENV['PLATFORM'] = 'win_8__1_ie_11'
 ```
 
 #### Finishing the session

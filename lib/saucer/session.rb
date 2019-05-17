@@ -104,7 +104,8 @@ module Saucer
     end
 
     def result=(res)
-      SauceWhisk::Jobs.change_status(@job_id, res)
+      result = res == true || res.to_s.match?(/pass/i)
+      SauceWhisk::Jobs.change_status(@job_id, result)
     end
 
     def stop
