@@ -20,28 +20,24 @@ require 'saucer'
 ## Usage
 
 #### Starting the Driver
-Use Saucer to start your sessions
+Use Saucer to start your session on Sauce Labs
 ```ruby
-@session = Saucer::Session.begin
+@session = Saucer::Session.start
 @driver = @session.driver
 ```
-Optionally you can create options with various parameters to pass into `Session.begin`
+Optionally you can create options with various parameters to pass into `Session.start`
 ```ruby
 options = Saucer::Options.new(browser_name: 'Safari', 
                               browser_version: '12.0',
                               platform_name: 'macOS 10.14')
-@session = Saucer::Session.begin(options)
+@session = Saucer::Session.start(options)
 @driver = @session.driver
 ```
 
 #### Finishing the session
-You can still quit the driver yourself if you'd like
+Stopping the session will automatically quit the driver and send updated data to Sauce Labs
 ```ruby
-@driver.quit
-```
-You get some automatic data population if you end the Session
-```ruby
-@session.end
+@session.stop
 ```
 
 #### Automatic Data Population
@@ -51,7 +47,7 @@ in the `env.rb` or `hooks.rb` file.
 ```ruby
 Before do |scenario|
   options = Saucer::Options.new(scenario: scenario)
-  session = Saucer::Session.begin(options)
+  session = Saucer::Session.start(options)
   @driver = session.driver
 end
 ```
@@ -76,9 +72,6 @@ Saucer provides a number of custom methods as part of the session instance:
 @session.stop_network
 @session.start_network
 @session.breakpoint
-
-# This will cause an error, but is available as an option 
-session.stop
 
 # These things can be done after the session has ended
 @session.save_screenshots

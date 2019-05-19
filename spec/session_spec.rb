@@ -48,7 +48,7 @@ module Saucer
     end
 
     describe 'api commands' do
-      let(:session) { Session.begin }
+      let(:session) { Session.start }
 
       describe '#save' do
         let(:job) { instance_double(SauceWhisk::Job) }
@@ -130,14 +130,6 @@ module Saucer
           expect(SauceWhisk::Jobs).to have_received(:change_status).with('job_id', 'passed')
         end
 
-        it 'stops job' do
-          allow(SauceWhisk::Jobs).to receive(:stop)
-
-          session.stop
-
-          expect(SauceWhisk::Jobs).to have_received(:stop).with('job_id')
-        end
-
         it 'raises exception if delete still running job' do
           response = instance_double(RestClient::Response, body: {'error' => "Job hasn't finished running"}.to_json)
           allow(SauceWhisk::Jobs).to receive(:delete_job).with('job_id').and_return(response)
@@ -145,15 +137,23 @@ module Saucer
           expect { session.delete }.to raise_error(APIError, "Can not delete job: Job hasn't finished running")
         end
 
-        it 'deletes a stopped job' do
-          allow(SauceWhisk::Jobs).to receive(:stop)
+        it 'deletes a job whose session has been ended' do
+          job = instance_double(SauceWhisk::Job,
+                                updated_fields: %i[custom_data name build],
+                                custom_data: {foo: 'bar'},
+                                name: 'Test Name',
+                                build: 'Build Name',
+                                id: 'job_id',
+                                end_time: '1')
+          allow(job).to receive(:custom_data=)
+          allow(SauceWhisk::Jobs).to receive(:fetch).and_return(job)
+
           response = instance_double(RestClient::Response, body: {'value' => 'Success'}.to_json)
           allow(SauceWhisk::Jobs).to receive(:delete_job).with('job_id').and_return(response)
 
           session.stop
           session.delete
 
-          expect(SauceWhisk::Jobs).to have_received(:stop).with('job_id')
           expect(SauceWhisk::Jobs).to have_received(:delete_job).with('job_id')
         end
       end
@@ -246,15 +246,15 @@ module Saucer
       end
     end
 
-    describe '#self.begin' do
+    describe '#self.start' do
       it 'creates a session without options' do
         allow(Time).to receive(:now).and_return('12345')
 
         allow(Selenium::WebDriver).to receive(:for).and_return(driver)
-        default_options = Options.new(name: 'Saucer::Session#self.begin creates a session without options',
+        default_options = Options.new(name: 'Saucer::Session#self.start creates a session without options',
                                       build: 'Local Execution - 12345')
 
-        expect(Session.begin).to be_a(Session)
+        expect(Session.start).to be_a(Session)
 
         args = [:remote, {url: default_options.url, desired_capabilities: default_options.capabilities}]
         expect(Selenium::WebDriver).to have_received(:for).with(*args)
@@ -264,7 +264,7 @@ module Saucer
         allow(Selenium::WebDriver).to receive(:for).and_return(driver)
         options = Options.new
 
-        expect(Session.begin(options)).to be_a(Session)
+        expect(Session.start(options)).to be_a(Session)
 
         args = [:remote, {url: options.url, desired_capabilities: options.capabilities}]
         expect(Selenium::WebDriver).to have_received(:for).with(*args)
@@ -289,7 +289,7 @@ module Saucer
       end
     end
 
-    describe '#end' do
+    describe '#stop' do
       it 'fails' do
         exception = instance_double(RuntimeError, inspect: 'inspected', backtrace: %w[1 2])
         job = instance_double(SauceWhisk::Job, end_time: '1')
@@ -299,7 +299,7 @@ module Saucer
         allow(SauceWhisk::Jobs).to receive(:fetch).with('job_id').and_return(job)
         allow(SauceWhisk::Jobs).to receive(:change_status)
 
-        session.end
+        session.stop
 
         expect(SauceWhisk::Jobs).to have_received(:change_status).with('job_id', false)
       end
@@ -312,7 +312,7 @@ module Saucer
         allow(SauceWhisk::Jobs).to receive(:fetch).with('job_id').and_return(job)
         allow(SauceWhisk::Jobs).to receive(:change_status)
 
-        session.end
+        session.stop
 
         expect(SauceWhisk::Jobs).to have_received(:change_status).with('job_id', true)
       end
@@ -335,7 +335,7 @@ module Saucer
         tags = %w[foo bar]
         session.tags = tags
 
-        session.end
+        session.stop
 
         json = '{"custom-data":{"foo":"bar"},"name":"Test Name","build":"Build Name"}'
         expect(SauceWhisk::Jobs).to have_received(:put).with('job_id', json)
@@ -348,7 +348,7 @@ module Saucer
         allow(SauceWhisk::Jobs).to receive(:save).with(job)
         allow(SauceWhisk::Jobs).to receive(:change_status)
 
-        session.end
+        session.stop
 
         expect(session.driver).to have_received(:quit)
       end

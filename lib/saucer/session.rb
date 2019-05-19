@@ -15,7 +15,7 @@ module Saucer
         end
       end
 
-      def begin(options = nil, scenario: nil)
+      def start(options = nil, scenario: nil)
         options ||= Options.new(scenario: scenario)
         options.name ||= test_name if test_name
         options.build ||= build_name
@@ -57,7 +57,7 @@ module Saucer
       @options = options
       @job_id = driver.session_id
       @tags = []
-      @scenario = options.scenario
+      @scenario = options.scenario if options.scenario
       @runner = self.class.runner
       @data = generate_data
 
@@ -77,7 +77,7 @@ module Saucer
       opt
     end
 
-    def end
+    def stop
       self.result = runner.result unless runner.result.nil?
 
       if runner.exception
@@ -104,11 +104,8 @@ module Saucer
     end
 
     def result=(res)
-      SauceWhisk::Jobs.change_status(@job_id, res)
-    end
-
-    def stop
-      SauceWhisk::Jobs.stop(@job_id)
+      result = res == true || res.to_s.match?(/pass/i)
+      SauceWhisk::Jobs.change_status(@job_id, result)
     end
 
     def delete
