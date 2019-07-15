@@ -5,8 +5,8 @@ module Saucer
     PAGE_OBJECTS = %w[site_prism page-object watirsome watir_drops].freeze
 
     def gems
-      Bundler.definition.specs.map(&:name).each_with_object({}) do |gem_name, hash|
-        name = Bundler.environment.specs.to_hash[gem_name]
+      ::Bundler.definition.specs.map(&:name).each_with_object({}) do |gem_name, hash|
+        name = ::Bundler.environment.specs.to_hash[gem_name]
         next if name.empty?
 
         hash[gem_name] = name.first.version
