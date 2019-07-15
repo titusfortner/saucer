@@ -1,3 +1,7 @@
+### 1.0.0.beta3 (2019-07-15)
+* Fixed Bundler namespace
+* Changed Session #begin and #end to #start and #stop
+
 ### 1.0.0.beta2 (2019-05-16)
 * Add iedriver version by default
 
